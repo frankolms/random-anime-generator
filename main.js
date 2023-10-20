@@ -8,9 +8,6 @@ randomAnime.addEventListener("click", () => {
       console.log(data);
       displayAnimeTitle(data);
     });
-
-  //   const title = document.getElementById("animeTitle");
-  //   title.textContent = "Requested Anime";
 });
 
 displayAnimeTitle = (data) => {
