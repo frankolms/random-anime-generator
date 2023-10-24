@@ -1,13 +1,17 @@
 const randomAnime = document.getElementById("randomAnime");
 const title = document.getElementById("animeTitle");
 const image = document.getElementById("animeImg");
+const username = document.getElementById("username");
 
 randomAnime.addEventListener("click", () => {
-  fetch("/api/v2/users/frankolms/animelist?status=plan_to_watch&limit=1000", {
-    headers: {
-      "X-MAL-CLIENT-ID": "7293ae0257e63715c16e13f04b73bccd",
-    },
-  })
+  fetch(
+    `/api/v2/users/${username.value}/animelist?status=plan_to_watch&limit=1000`,
+    {
+      headers: {
+        "X-MAL-CLIENT-ID": "7293ae0257e63715c16e13f04b73bccd",
+      },
+    }
+  )
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
