@@ -1,7 +1,3 @@
-// export default async function handler(req, res) {
-//   res.status(200).send("Hello World!");
-// }
-
 const { createProxyMiddleware } = require("http-proxy-middleware");
 
 const apiProxy = createProxyMiddleware({
