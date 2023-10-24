@@ -28,5 +28,16 @@ randomAnime.addEventListener("click", () => {
     },
   })
     .then((response) => response.json())
-    .then((data) => console.log(data));
+    .then((data) => {
+      console.log(data);
+      displayAnimeInfo(data);
+    });
 });
+
+displayAnimeInfo = (data) => {
+  let randomNum = Math.floor(Math.random() * data.data.length);
+  console.log(data.data.length);
+  console.log(randomNum);
+  title.textContent = data.data[randomNum].node.title;
+  image.src = data.data[randomNum].node.main_picture.medium;
+};
