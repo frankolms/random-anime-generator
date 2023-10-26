@@ -5,19 +5,23 @@ const username = document.getElementById("username");
 const animeStatus = document.getElementById("animeStatus");
 
 randomAnime.addEventListener("click", () => {
-  fetch(
-    `/api/v2/users/${username.value}/animelist?status=${animeStatus.value}&limit=1000`,
-    {
-      headers: {
-        "X-MAL-CLIENT-ID": "7293ae0257e63715c16e13f04b73bccd",
-      },
-    }
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      displayAnimeInfo(data);
-    });
+  if (!username.value) {
+    alert("Please Enter Your MAL Username");
+  } else {
+    fetch(
+      `/api/v2/users/${username.value}/animelist?status=${animeStatus.value}&limit=1000`,
+      {
+        headers: {
+          "X-MAL-CLIENT-ID": "7293ae0257e63715c16e13f04b73bccd",
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        displayAnimeInfo(data);
+      });
+  }
 });
 
 displayAnimeInfo = (data) => {
