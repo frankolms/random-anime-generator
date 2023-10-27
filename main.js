@@ -4,13 +4,16 @@ const image = document.getElementById("animeImg");
 const username = document.getElementById("username");
 const animeStatus = document.getElementById("animeStatus");
 const animeScore = document.getElementById("animeScore");
+const numEpisodes = document.getElementById("numEpisodes");
+const genres = document.getElementById("genres");
+const synopsis = document.getElementById("synopsis");
 
 randomAnime.addEventListener("click", () => {
   if (!username.value) {
     alert("Please Enter Your MAL Username");
   } else {
     fetch(
-      `/api/v2/users/${username.value}/animelist?fields=mean&status=${animeStatus.value}&limit=1000`,
+      `/api/v2/users/${username.value}/animelist?fields=mean,num_episodes,genres,synopsis&status=${animeStatus.value}&limit=1000`,
       {
         headers: {
           "X-MAL-CLIENT-ID": "7293ae0257e63715c16e13f04b73bccd",
@@ -33,4 +36,14 @@ displayAnimeInfo = (data) => {
   title.textContent = data.data[randomNum].node.title;
   image.src = data.data[randomNum].node.main_picture.medium;
   animeScore.textContent = data.data[randomNum].node.mean;
+  numEpisodes.textContent = data.data[randomNum].node.num_episodes;
+  // for (let i = 0; i < data.data[randomNum].node.genres.length; i++) {
+  // }
+  genres.innerHTML =
+    `<h2>` +
+    data.data[randomNum].node.genres.map((genre) => {
+      return `<h2>${genre.name}</h2>`;
+    }) +
+    `</h2>`;
+  synopsis.textContent = data.data[randomNum].node.synopsis;
 };
