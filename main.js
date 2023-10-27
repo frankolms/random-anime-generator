@@ -37,8 +37,6 @@ displayAnimeInfo = (data) => {
   image.src = data.data[randomNum].node.main_picture.medium;
   animeScore.textContent = data.data[randomNum].node.mean;
   numEpisodes.textContent = data.data[randomNum].node.num_episodes;
-  // for (let i = 0; i < data.data[randomNum].node.genres.length; i++) {
-  // }
   genres.innerHTML =
     `<h2>` +
     data.data[randomNum].node.genres.map((genre) => {
