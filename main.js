@@ -20,7 +20,13 @@ randomAnime.addEventListener("click", () => {
         },
       }
     )
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.status === 404) {
+          alert("Please Enter a Valid Username");
+        } else {
+          return response.json();
+        }
+      })
       .then((data) => {
         console.log(data);
         displayAnimeInfo(data);
