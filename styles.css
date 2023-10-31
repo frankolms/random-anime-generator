@@ -1,6 +1,7 @@
 #randomAnime {
   border-radius: 12px;
   background: #4065ba;
+  margin-left: 20px;
 }
 
 #username {
@@ -10,4 +11,16 @@
 #heading {
   background-color: #4065ba;
   color: white;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+.userInputs {
+  /* display: flex; */
+  /* justify-content: center; */
+  margin-left: 20px;
+}
+
+.chooseStatus {
+  margin-left: 10px;
 }

@@ -14,16 +14,18 @@
   </head>
   <body>
     <h1 id="heading">Random Anime Generator</h1>
-    <input type="text" placeholder="Enter MAL Username Here" id="username" />
-    <label for="anime-status">Choose Status</label>
-    <select name="anime-status" id="animeStatus" required>
-      <option value="watching">Watching</option>
-      <option value="completed">Completed</option>
-      <option value="on_hold">On Hold</option>
-      <option value="dropped">Dropped</option>
-      <option value="plan_to_watch" selected>Plan to Watch</option>
-    </select>
-    <button id="randomAnime" class="btn btn-primary">Get Anime</button>
+    <div class="userInputs">
+      <input type="text" placeholder="Enter MAL Username Here" id="username" />
+      <label class="chooseStatus" for="anime-status">Choose Status:</label>
+      <select name="anime-status" id="animeStatus" required>
+        <option value="watching">Watching</option>
+        <option value="completed">Completed</option>
+        <option value="on_hold">On Hold</option>
+        <option value="dropped">Dropped</option>
+        <option value="plan_to_watch" selected>Plan to Watch</option>
+      </select>
+      <button id="randomAnime" class="btn btn-primary">Get Anime</button>
+    </div>
     <h2 id="animeTitle">Anime Title</h2>
     <img id="animeImg" />
     <h3 id="animeScore"></h3>
