@@ -34,6 +34,22 @@ randomAnime.addEventListener("click", () => {
   }
 });
 
+fetchRandomAnime = () => {
+  fetch(
+    `/api/v2/anime/ranking?ranking_type=all&limit=500&fields=mean,num_episodes,genres,synopsis`,
+    {
+      headers: {
+        "X-MAL-CLIENT-ID": "7293ae0257e63715c16e13f04b73bccd",
+      },
+    }
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      displayAnimeInfo(data);
+    });
+};
+
 displayAnimeInfo = (data) => {
   let randomNum = Math.floor(Math.random() * data.data.length);
   console.log(data.data.length);
