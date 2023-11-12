@@ -68,4 +68,4 @@ displayAnimeInfo = (data) => {
   synopsis.textContent = data.data[randomNum].node.synopsis;
 };
 
-// test commit
+
