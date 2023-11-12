@@ -48,4 +48,13 @@
   .spaceBetween {
     margin-bottom: 10px;
   }
+
+  .animeInfoPositioning {
+    display: flex;
+    padding: 0 0 20px 20px;
+  }
+  
+  .leftOfImg {
+    padding-left: 10px;
+  }
 }
