@@ -67,3 +67,5 @@ displayAnimeInfo = (data) => {
     `</h2>`;
   synopsis.textContent = data.data[randomNum].node.synopsis;
 };
+
+// test commit
