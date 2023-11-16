@@ -60,11 +60,9 @@ displayAnimeInfo = (data) => {
   animeScore.textContent = data.data[randomNum].node.mean;
   numEpisodes.textContent = data.data[randomNum].node.num_episodes;
   genres.innerHTML =
-    `<h2>` +
     data.data[randomNum].node.genres.map((genre) => {
-      return `<h2>${genre.name}</h2>`;
-    }) +
-    `</h2>`;
+      return `<h2>${genre.name}<h2>`;
+    }).join('');
   synopsis.textContent = data.data[randomNum].node.synopsis;
 };
 
