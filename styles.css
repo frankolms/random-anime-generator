@@ -15,12 +15,20 @@
   padding-bottom: 5px;
 }
 
+#animeTitle {
+  color: #4065ba
+}
+
 .userInputs {
   margin-left: 20px;
 }
 
 .chooseStatus {
   margin-left: 10px;
+}
+
+.detailTitles {
+  color: #4065ba
 }
 
 @media screen and (max-width: 520px) {
@@ -64,5 +72,8 @@
   
   .leftOfImg {
     padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }

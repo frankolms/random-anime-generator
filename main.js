@@ -57,11 +57,11 @@ displayAnimeInfo = (data) => {
   console.log(data.data[randomNum]);
   title.textContent = data.data[randomNum].node.title;
   image.src = data.data[randomNum].node.main_picture.medium;
-  animeScore.textContent = data.data[randomNum].node.mean;
-  numEpisodes.textContent = data.data[randomNum].node.num_episodes;
-  genres.innerHTML =
+  animeScore.textContent = `${data.data[randomNum].node.mean}`;
+  numEpisodes.textContent = `${data.data[randomNum].node.num_episodes}`;
+  genres.innerHTML = 
     data.data[randomNum].node.genres.map((genre) => {
-      return `<h2>${genre.name}<h2>`;
+      return `<h4>${genre.name}<h4>`;
     }).join('');
   synopsis.textContent = data.data[randomNum].node.synopsis;
 };
