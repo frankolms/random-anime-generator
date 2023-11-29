@@ -7,11 +7,15 @@ const animeScore = document.getElementById("animeScore");
 const numEpisodes = document.getElementById("numEpisodes");
 const genres = document.getElementById("genres");
 const synopsis = document.getElementById("synopsis");
+const loader = document.getElementById('loader');
+const animeInfo = document.getElementById('animeInfo');
 
 randomAnime.addEventListener("click", () => {
   if (!username.value) {
     alert("Please Enter Your MAL Username");
   } else {
+    loader.style.display="block";
+    animeInfo.style.display="none";
     fetch(
       `/api/v2/users/${username.value}/animelist?fields=mean,num_episodes,genres,synopsis&status=${animeStatus.value}&limit=1000`,
       {
@@ -29,6 +33,8 @@ randomAnime.addEventListener("click", () => {
       })
       .then((data) => {
         console.log(data);
+        loader.style.display="none";
+        animeInfo.style.display="block";
         displayAnimeInfo(data);
       });
   }

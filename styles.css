@@ -31,6 +31,10 @@
   color: #4065ba
 }
 
+.loadingGif {
+  display: none;
+}
+
 @media screen and (max-width: 520px) {
   body {
     min-height: 100vh;
