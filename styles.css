@@ -45,6 +45,14 @@
     margin: 10px 0 0 25%;
   }
 
+  #animeTitle {
+    margin: 10px;
+  }
+
+  #synopsis {
+    margin: 0 10px;
+  }
+
   .spaceBetween {
     margin-bottom: 10px;
   }
