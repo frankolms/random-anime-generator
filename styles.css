@@ -15,6 +15,15 @@
   padding-bottom: 5px;
 }
 
+.animeInfoPositioning {
+  display: flex;
+}
+
+.leftOfImg {
+  display: flex;
+  flex-direction: column;
+}
+
 #animeTitle {
   color: #4065ba
 }
