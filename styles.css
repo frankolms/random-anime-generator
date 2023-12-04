@@ -31,9 +31,9 @@
   color: #4065ba
 }
 
-.loadingGif {
-  display: none;
-}
+
+
+
 
 @media screen and (max-width: 520px) {
   body {
@@ -54,7 +54,7 @@
 
   #randomAnime {
     width: 150px;
-    margin: 10px 0 0 25%;
+    margin: 10px 0 0 31%;
   }
 
   #animeTitle {
@@ -73,11 +73,21 @@
     display: flex;
     padding: 0 0 20px 20px;
   }
+
+  #loader {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+  }
   
+  .loadingGif {
+    width: 100px;
+  }
   .leftOfImg {
     padding-left: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
+  
 }

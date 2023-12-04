@@ -14,7 +14,7 @@ randomAnime.addEventListener("click", () => {
   if (!username.value) {
     alert("Please Enter Your MAL Username");
   } else {
-    loader.style.display="block";
+    loader.style.display="flex";
     animeInfo.style.display="none";
     fetch(
       `/api/v2/users/${username.value}/animelist?fields=mean,num_episodes,genres,synopsis&status=${animeStatus.value}&limit=1000`,
@@ -41,7 +41,6 @@ randomAnime.addEventListener("click", () => {
 });
 
 fetchRandomAnime = () => {
-  loader.style.display="block";
     animeInfo.style.display="none";
   fetch(
     `/api/v2/anime/ranking?ranking_type=all&limit=500&fields=mean,num_episodes,genres,synopsis`,
