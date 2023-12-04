@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/frankolms/random-anime-generator#readme",
   "devDependencies": {
-    "vercel": "^32.5.4"
+    "vercel": "^32.6.1"
   },
   "dependencies": {
     "http-proxy-middleware": "^2.0.6"

@@ -41,6 +41,8 @@ randomAnime.addEventListener("click", () => {
 });
 
 fetchRandomAnime = () => {
+  loader.style.display="block";
+    animeInfo.style.display="none";
   fetch(
     `/api/v2/anime/ranking?ranking_type=all&limit=500&fields=mean,num_episodes,genres,synopsis`,
     {
@@ -52,6 +54,8 @@ fetchRandomAnime = () => {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
+      loader.style.display="none";
+        animeInfo.style.display="block";
       displayAnimeInfo(data);
     });
 };
