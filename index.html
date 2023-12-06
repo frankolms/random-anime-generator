@@ -13,7 +13,13 @@
     <link href="styles.css" rel="stylesheet" />
   </head>
   <body onload="fetchRandomAnime()">
-    <h1 id="heading">Random Anime Generator</h1>
+    <div id="heading">
+    <h1>Random Anime Generator</h1>
+    <label class="switch">
+      <input id="lightDarkMode" onclick="toggleLightDark()" type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
     <div class="userInputs">
       <input
         type="text"

@@ -9,6 +9,7 @@ const genres = document.getElementById("genres");
 const synopsis = document.getElementById("synopsis");
 const loader = document.getElementById('loader');
 const animeInfo = document.getElementById('animeInfo');
+const lightDarkMode = document.getElementById('lightDarkMode');
 
 randomAnime.addEventListener("click", () => {
   if (!username.value) {
@@ -74,5 +75,13 @@ displayAnimeInfo = (data) => {
     }).join('');
   synopsis.textContent = data.data[randomNum].node.synopsis;
 };
+
+toggleLightDark = () => {
+  if (lightDarkMode.checked) {
+    document.body.classList.add("darkMode");
+  } else {
+    document.body.classList.remove("darkMode");
+  }
+}
 
 
