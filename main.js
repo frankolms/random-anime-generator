@@ -10,6 +10,17 @@ const synopsis = document.getElementById("synopsis");
 const loader = document.getElementById('loader');
 const animeInfo = document.getElementById('animeInfo');
 const lightDarkMode = document.getElementById('lightDarkMode');
+let getTheme = localStorage.getItem('theme')
+
+if(getTheme != null && getTheme === "darkMode") {
+  document.body.classList.add('darkMode')
+  lightDarkMode.checked = true;
+} else {
+  document.body.classList.remove('darkMode')
+  lightDarkMode.checked = false;
+}
+
+// document.body.classList.add(getTheme);
 
 randomAnime.addEventListener("click", () => {
   if (!username.value) {
@@ -78,8 +89,10 @@ displayAnimeInfo = (data) => {
 
 toggleLightDark = () => {
   if (lightDarkMode.checked) {
+    localStorage.setItem('theme', 'darkMode')
     document.body.classList.add("darkMode");
   } else {
+    localStorage.setItem('theme', "");
     document.body.classList.remove("darkMode");
   }
 }
